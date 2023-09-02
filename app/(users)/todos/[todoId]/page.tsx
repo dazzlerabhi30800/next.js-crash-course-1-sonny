@@ -16,7 +16,11 @@ const fetchTodo = async (id: string) => {
 const TodoPage = async ({ params: { todoId } }: pageProps) => {
   const todo = await fetchTodo(todoId);
   console.log(todo);
-  return <div> TodoPage: {todoId}</div>;
+  return <div className="w-fit my-5 mx-auto space-y-5 p-5 border border-sky-500 rounded-lg">
+    <h2>{todo.title}</h2>
+    <p>by UserId : {todo.userId}</p>
+    <span className={`${todo.completed ? "text-sky-500" : "text-red-500"} font-semibold`}>{todo.completed ? "Completed" : "Not Completed"}</span>
+  </div>;
 };
 
 export default TodoPage;
