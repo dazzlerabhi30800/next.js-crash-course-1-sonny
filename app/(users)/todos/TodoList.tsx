@@ -1,8 +1,9 @@
 import { Todo } from '@/typing';
 import Link from 'next/link';
-import React from 'react'
 
 const fetchTodos = async () => {
+    const randomTimeout = Math.floor(Math.random() * 800);
+    await new Promise((resolve) => setTimeout(resolve, randomTimeout));
     const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
     const todos: Todo[] = await res.json();
     return todos;
