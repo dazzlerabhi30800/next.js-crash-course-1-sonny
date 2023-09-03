@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description: "This is the Search Page You can Search and get results",
 }
 
+
 const layout = ({ children }: Node) => {
     return (
         <main className='flex space-x-4 divide-x-2 p-5'>
